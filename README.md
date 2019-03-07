@@ -1,13 +1,32 @@
 # drvid
 
-The goal of drvid is to provide access to the [DVID](https://github.com/janelia-flyem/dvid) used to store electron microscopy image data for large scale connectomics 
+Provides access from R to [DVID](https://github.com/janelia-flyem/dvid) as used to store electron microscopy image data for large scale connectomics 
 
 ## Installation
 
-You can install the released version of drvid from [CRAN](https://CRAN.R-project.org) with:
+You can install the development version of drvid from GitHub
 
 ``` r
 devtools::install_github("jefferis/drvid")
 ```
+## Setup
 
+You can specify a default DVID server by specifying the following two
+environment variables in your [Renviron](https://www.rdocumentation.org/packages/base/topics/Startup)
+file.
+
+```
+drvid.server="http://dvid.connectomesrus.com:8900"
+drvid.node="a32b"
+```
+Make sure you have a blank line at the end of the file
+
+## Use
+
+```
+library(drvid)
+nl=read.neurons.dvid(c(635062078, 859507274))
+library(nat)
+plot3d(nl)
+```
 
