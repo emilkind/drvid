@@ -13,3 +13,5 @@ Imports:
     nat,
     curl
 RoxygenNote: 6.1.1
+URL: https://github.com/jefferis/drvid
+BugReports: https://github.com/jefferis/drvid/issues
