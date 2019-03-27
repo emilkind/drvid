@@ -1,7 +1,7 @@
 Package: drvid
 Type: Package
 Title: Access to 'DVID' API
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: person("Gregory","Jefferis", email="jefferis@gmail.com", 
     role = c("aut", "cre"), comment = c(ORCID = "0000-0002-0587-9355"))
 Description: API access to the 'DVID' (Distributed, Versioned, Image-oriented 
