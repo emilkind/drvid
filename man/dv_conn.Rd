@@ -24,9 +24,10 @@ An list of class \code{dv_conn}
 Make a connection to DVID server
 }
 \section{Curl options}{
- You can set curl options by passing additional named
-  arguments captured by \code{...}. For example you can set authentication or
-  a proxy. See \code{\link[curl]{handle}} and
+ \bold{drvid} uses the curl library provided by the
+  \code{curl} package to carry out remote requests. You can set curl options
+  by passing additional named arguments captured by \code{...}. For example
+  you can set authentication or a proxy. See \code{\link[curl]{handle}} and
   \code{\link[curl]{curl_options}} for a full list of possible options.
 
   You can also set default curl options using environment variables with
