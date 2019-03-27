@@ -5,7 +5,7 @@
 \title{Make a connection to DVID server}
 \usage{
 dv_conn(server = Sys.getenv("drvid.server"),
-  node = Sys.getenv("drvid.node"), conn = NULL)
+  node = Sys.getenv("drvid.node"), conn = NULL, ...)
 }
 \arguments{
 \item{server}{DVID server (with optional port specification)}
@@ -13,6 +13,10 @@ dv_conn(server = Sys.getenv("drvid.server"),
 \item{node}{DVID node}
 
 \item{conn}{A pre-existing connection object}
+
+\item{...}{Named options / headers to be set in the curl handle (see
+\code{\link[curl]{handle}} and \code{\link[curl]{curl_options}} for
+details)}
 }
 \value{
 An list of class \code{dv_conn}
@@ -27,4 +31,7 @@ conn1 <- dv_conn('http://dvid.connectomesrus.com:8900', node='a32b')
 conn2 <- dv_conn('http://dvid.connectomesrus.com:8900', node='a42c')
 
 }
+}
+\seealso{
+\code{\link[curl]{handle}}, \code{\link[curl]{curl_options}}
 }
