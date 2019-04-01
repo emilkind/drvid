@@ -41,13 +41,18 @@ API access to the 'DVID' (Distributed, Versioned, Image-oriented
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/jefferis/drvid}
-  \item Report bugs at \url{https://github.com/jefferis/drvid/issues}
+  \item \url{https://github.com/jefferislab/drvid}
+  \item Report bugs at \url{https://github.com/jefferislab/drvid/issues}
 }
 
 }
 \author{
 \strong{Maintainer}: Gregory Jefferis \email{jefferis@gmail.com} (0000-0002-0587-9355)
+
+Authors:
+\itemize{
+  \item Alexander Bates \email{alexander.shakeel.bates@gmail.com} (0000-0002-1195-0445)
+}
 
 }
 \keyword{internal}

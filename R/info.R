@@ -26,6 +26,7 @@ dv_get_user_bookmarks <- function(user, conn = NULL, ...){
 #'
 #' @description Retrieve annotations for a bodyid or vector of bodyids
 #' @inheritParams dv_get_user_bookmarks
+#' @param bodyids a vector of body IDs for neurons and/or segmentations hosted on a DVID server
 #' @return a dataframe with information on names, annotations and the users that  gave them for the given bodyids
 #'
 #' @export
