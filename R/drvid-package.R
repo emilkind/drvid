@@ -14,4 +14,16 @@
 #'   \item drvid.node
 #'
 #'   }
+#'
+#'   In addition if you need to set authentication or other curl request options
+#'   you can do so directly by passing arguments to \code{\link{dv_conn}} or by
+#'   setting environment variables of the form:
+#'
+#'   \itemize{
+#'
+#'   \item drvid.curl.<curloption>
+#'
+#'   }
+#'
+#'   where \code{<curloption>} represents the name of a curl option.
 "_PACKAGE"

@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">drvid</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -77,6 +77,9 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -111,7 +114,7 @@
     </div>
 
     <pre class="usage"><span class='fu'>dv_conn</span>(<span class='kw'>server</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Sys.getenv'>Sys.getenv</a></span>(<span class='st'>"drvid.server"</span>),
-  <span class='kw'>node</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Sys.getenv'>Sys.getenv</a></span>(<span class='st'>"drvid.node"</span>), <span class='kw'>conn</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+  <span class='kw'>node</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Sys.getenv'>Sys.getenv</a></span>(<span class='st'>"drvid.node"</span>), <span class='kw'>conn</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -128,11 +131,33 @@
       <th>conn</th>
       <td><p>A pre-existing connection object</p></td>
     </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Named options / headers to be set in the curl handle (see section
+Curl options for details)</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>An list of class <code>dv_conn</code></p>
+    
+    <h2 class="hasAnchor" id="curl-options"><a class="anchor" href="#curl-options"></a>Curl options</h2>
+
+    <p><b>drvid</b> uses the curl library provided by the
+  <code>curl</code> package to carry out remote requests. You can set curl options
+  by passing additional named arguments captured by <code>...</code>. For example
+  you can set authentication or a proxy. See <code><a href='https://www.rdocumentation.org/packages/curl/topics/handle'>handle</a></code> and
+  <code><a href='https://www.rdocumentation.org/packages/curl/topics/curl_options'>curl_options</a></code> for a full list of possible options.</p>
+<p>You can also set default curl options using environment variables with
+  names of the form <code>drvid.curl.&lt;curloption&gt;</code>. For example the following
+  entry in you <code><a href='https://www.rdocumentation.org/packages/base/topics/Startup'>Renviron</a></code> file will set the curl <code>proxy</code>
+  option.</p>
+<p><code>drvid.curl.proxy="socks5://localhost:6666"</code></p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://www.rdocumentation.org/packages/curl/topics/handle'>handle</a></code>, <code><a href='https://www.rdocumentation.org/packages/curl/topics/curl_options'>curl_options</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -148,6 +173,10 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#curl-options">Curl options</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

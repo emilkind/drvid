@@ -5,7 +5,7 @@
 \title{Make a connection to DVID server}
 \usage{
 dv_conn(server = Sys.getenv("drvid.server"),
-  node = Sys.getenv("drvid.node"), conn = NULL)
+  node = Sys.getenv("drvid.node"), conn = NULL, ...)
 }
 \arguments{
 \item{server}{DVID server (with optional port specification)}
@@ -13,6 +13,9 @@ dv_conn(server = Sys.getenv("drvid.server"),
 \item{node}{DVID node}
 
 \item{conn}{A pre-existing connection object}
+
+\item{...}{Named options / headers to be set in the curl handle (see section
+Curl options for details)}
 }
 \value{
 An list of class \code{dv_conn}
@@ -20,6 +23,21 @@ An list of class \code{dv_conn}
 \description{
 Make a connection to DVID server
 }
+\section{Curl options}{
+ \bold{drvid} uses the curl library provided by the
+  \code{curl} package to carry out remote requests. You can set curl options
+  by passing additional named arguments captured by \code{...}. For example
+  you can set authentication or a proxy. See \code{\link[curl]{handle}} and
+  \code{\link[curl]{curl_options}} for a full list of possible options.
+
+  You can also set default curl options using environment variables with
+  names of the form \code{drvid.curl.<curloption>}. For example the following
+  entry in you \code{\link{Renviron}} file will set the curl \code{proxy}
+  option.
+
+  \verb{drvid.curl.proxy="socks5://localhost:6666"}
+}
+
 \examples{
 \dontrun{
 
@@ -27,4 +45,7 @@ conn1 <- dv_conn('http://dvid.connectomesrus.com:8900', node='a32b')
 conn2 <- dv_conn('http://dvid.connectomesrus.com:8900', node='a42c')
 
 }
+}
+\seealso{
+\code{\link[curl]{handle}}, \code{\link[curl]{curl_options}}
 }

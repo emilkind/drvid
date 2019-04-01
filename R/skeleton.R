@@ -11,7 +11,8 @@ read.neuron.dvid <- function(x, conn=NULL, ...) {
   # res <- httr::GET(url)
   tf <- tempfile(pattern = as.character(x), fileext = '.swc')
   on.exit(unlink(tf))
-  curl::curl_download(url, destfile = tf)
+  handle=curl::new_handle(.list=conn$options)
+  curl::curl_download(url, destfile = tf, handle = handle)
   nat::read.neuron(tf, ...)
 }
 

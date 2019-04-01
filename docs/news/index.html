@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>drvid: Access to 'DVID' API — drvid-package • drvid</title>
+<title>Changelog • drvid</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,11 +30,7 @@
 
 
 
-<meta property="og:title" content="drvid: Access to 'DVID' API — drvid-package" />
-
-<meta property="og:description" content="API access to the 'DVID' (Distributed, Versioned, Image-oriented 
-    Dataservice)." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:title" content="Changelog" />
 
 
 
@@ -51,7 +47,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -103,59 +99,37 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>drvid: Access to 'DVID' API</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jefferis/drvid/blob/master/R/drvid-package.R'><code>R/drvid-package.R</code></a></small>
-    <div class="hidden name"><code>drvid-package.Rd</code></div>
+      <h1>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/jefferis/drvid/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    
-    <p>API access to the 'DVID' (Distributed, Versioned, Image-oriented 
-    Dataservice).</p>
-    
-    </div>
-
-        
-    <h2 class="hasAnchor" id="package-environment-variables"><a class="anchor" href="#package-environment-variables"></a>Package environment variables</h2>
-
-    
-    <p>The following environment variables may be set e.g. in your
-  <code><a href='https://www.rdocumentation.org/packages/base/topics/Startup'>Renviron</a></code> file in order to specify a default DVID server. See
-  <code><a href='dv_conn.html'>dv_conn</a></code> for more information about specifying DVID login
-  details.</p>
-<p></p><ul>
-<li><p>drvid.server</p></li>
-<li><p>drvid.node</p></li>
+    <div id="drvid-0-2-0" class="section level1">
+<h1 class="page-header">
+<a href="#drvid-0-2-0" class="anchor"></a>drvid 0.2.0</h1>
+<ul>
+<li>Support for named curl options (including defaults via environment variables). Can be useful for authentication etc.</li>
+<li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
 </ul>
-    <p>In addition if you need to set authentication or other curl request options
-  you can do so directly by passing arguments to <code><a href='dv_conn.html'>dv_conn</a></code> or by
-  setting environment variables of the form:</p>
-<p></p><ul>
-<li><p>drvid.curl.&lt;curloption&gt;</p></li>
+</div>
+    <div id="drvid-0-1-0" class="section level1">
+<h1 class="page-header">
+<a href="#drvid-0-1-0" class="anchor"></a>drvid 0.1.0</h1>
+<ul>
+<li>First version</li>
 </ul>
-    <p>where <code>&lt;curloption&gt;</code> represents the name of a curl option.</p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p>Useful links:</p><ul>
-<li><p><a href='https://github.com/jefferis/drvid'>https://github.com/jefferis/drvid</a></p></li>
-<li><p>Report bugs at <a href='https://github.com/jefferis/drvid/issues'>https://github.com/jefferis/drvid/issues</a></p></li>
-</ul></div>
-    
-
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#package-environment-variables">Package environment variables</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-          </ul>
-
-    <h2>Author</h2>
-    <p><strong>Maintainer</strong>: Gregory Jefferis <a href='mailto:jefferis@gmail.com'>jefferis@gmail.com</a> (0000-0002-0587-9355)</p>
+    <div id="tocnav">
+      <h2>Contents</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#drvid-0-2-0">0.2.0</a></li>
+        <li><a href="#drvid-0-1-0">0.1.0</a></li>
+      </ul>
+    </div>
   </div>
+
 </div>
 
       <footer>
