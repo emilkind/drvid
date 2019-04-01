@@ -1,3 +1,5 @@
+[![Travis build status](https://travis-ci.org/jefferis/drvid.svg?branch=master)](https://travis-ci.org/jefferis/drvid)
+
 # drvid
 
 Provides access from R to [DVID](https://github.com/janelia-flyem/dvid) as used to store electron microscopy image data for large scale connectomics 
