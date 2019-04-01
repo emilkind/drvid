@@ -14,7 +14,7 @@ read.neurons.dvid(x, conn = NULL, OmitFailures = NA, df = NULL, ...)
 
 \item{conn}{optional DVID connection object (see \code{\link{dv_conn}})}
 
-\item{...}{Additional arguments passed to}
+\item{...}{Additional arguments passed to nat::read.neuron}
 
 \item{OmitFailures}{Whether to omit neurons for which \code{FUN} gives an 
 error. The default value (\code{NA}) will result in nlapply stopping with 
