@@ -49,5 +49,10 @@ Useful links:
 \author{
 \strong{Maintainer}: Gregory Jefferis \email{jefferis@gmail.com} (0000-0002-0587-9355)
 
+Authors:
+\itemize{
+  \item Alexander Bates \email{alexander.shakeel.bates@gmail.com} (0000-0002-1195-0445)
+}
+
 }
 \keyword{internal}
