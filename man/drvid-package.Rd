@@ -2,8 +2,9 @@
 % Please edit documentation in R/drvid-package.R
 \docType{package}
 \name{drvid-package}
-\alias{drvid}
 \alias{drvid-package}
+\alias{_PACKAGE}
+\alias{drvid}
 \title{drvid: Access to 'DVID' API}
 \description{
 API access to the 'DVID' (Distributed, Versioned, Image-oriented 

@@ -1,5 +1,5 @@
 #' @keywords internal
-#'
+#' @aliases drvid
 #' @section Package environment variables:
 #'
 #'   The following environment variables may be set e.g. in your
