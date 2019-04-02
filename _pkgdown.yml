@@ -8,3 +8,8 @@ reference:
   contents:
   - '`dv_conn`'
   - '`read.neuron.dvid`'
+  - '`dv_bodyid_at_xyz`'
+  - '`dv_get_annotations`'
+  - '`dv_get_segmentation_info`'
+  - '`dv_get_user_bookmarks`'
+  - '`dv_get_voxels`'

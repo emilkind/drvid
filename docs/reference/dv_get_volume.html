@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • drvid</title>
+<title>Get a mesh or voxel data for a given bodyid — dv_get_voxels • drvid</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,7 +30,11 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Get a mesh or voxel data for a given bodyid — dv_get_voxels" />
+
+<meta property="og:description" content="Get a mesh or voxel data for a given bodyid, from a DVID server.
+Meshes are made via alphashapes, using the function alphashape3d::ashape3d, which will work poorly is scale is too low, and slowly is scale is too high." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -47,7 +51,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -97,94 +101,70 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Get a mesh or voxel data for a given bodyid</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jefferis/drvid/blob/master/R/mesh.R'><code>R/mesh.R</code></a></small>
+    <div class="hidden name"><code>dv_get_volume.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>Get a mesh or voxel data for a given bodyid, from a DVID server.
+Meshes are made via alphashapes, using the function <code><a href='https://www.rdocumentation.org/packages/alphashape3d/topics/ashape3d'>alphashape3d::ashape3d</a></code>, which will work poorly is scale is too low, and slowly is scale is too high.</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>dv_get_voxels</span>(<span class='no'>bodyid</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>conn</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-package-information" class="hasAnchor"><a href="#section-package-information" class="anchor"></a>Package information</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="drvid-package.html">drvid-package</a></code> </p>
-        </td>
-        <td><p>drvid: Access to 'DVID' API</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="dv_conn.html">dv_conn()</a></code> </p>
-        </td>
-        <td><p>Make a connection to DVID server</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="read.neuron.dvid.html">read.neuron.dvid()</a></code> <code><a href="read.neuron.dvid.html">read.neurons.dvid()</a></code> </p>
-        </td>
-        <td><p>Read a single neuron in skeleton format from DVID server</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="dv_bodyid_at_xyz.html">dv_bodyid_at_xyz()</a></code> </p>
-        </td>
-        <td><p>Get the bodyid for a volumetric segmentation that covers a given point/points
-in space</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="dv_get_annotations.html">dv_get_annotations()</a></code> </p>
-        </td>
-        <td><p>Retrieve annotations for bodyids</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="dv_get_segmentation_info.html">dv_get_segmentation_info()</a></code> </p>
-        </td>
-        <td><p>Get information about a segmentation</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="dv_get_user_bookmarks.html">dv_get_user_bookmarks()</a></code> </p>
-        </td>
-        <td><p>Retrieve user bookmarks for a neuTu user from a DVID server</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="dv_get_volume.html">dv_get_voxels()</a></code> <code><a href="dv_get_volume.html">dv_get_mesh()</a></code> </p>
-        </td>
-        <td><p>Get a mesh or voxel data for a given bodyid</p></td>
-      </tr>
-    </tbody>
+<span class='fu'>dv_get_mesh</span>(<span class='no'>bodyid</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>conn</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>use.surface.voxels</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='no'>...</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>bodyid</th>
+      <td><p>a body ID for a neuron or segmentation hosted on a DVID server</p></td>
+    </tr>
+    <tr>
+      <th>scale</th>
+      <td><p>Resolution of sparse volume starting with 0 where each level
+beyond 0 has 1/2 resolution of previous level. "coarse" will
+return the volume in block coordinates.</p></td>
+    </tr>
+    <tr>
+      <th>conn</th>
+      <td><p>optional DVID connection object (see <code><a href='dv_conn.html'>dv_conn</a></code>)</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional arguments passed to dv_fetch</p></td>
+    </tr>
+    <tr>
+      <th>use.surface.voxels</th>
+      <td><p>if TRUE, surface voxels as estimated as points that do not have at least k other points within 2*voxelsize of them</p></td>
+    </tr>
+    <tr>
+      <th>k</th>
+      <td><p>see use.surface.voxels</p></td>
+    </tr>
     </table>
-  </div>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>a mesh3</p>
+    
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-package-information">Package information</a></li>
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
+
   </div>
 </div>
 
