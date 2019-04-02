@@ -2,7 +2,7 @@
 #'
 #' @param x body id
 #' @param conn optional DVID connection object (see \code{\link{dv_conn}})
-#' @param ... Additional arguments passed to
+#' @param ... Additional arguments passed to nat::read.neuron
 #'
 #' @export
 read.neuron.dvid <- function(x, conn=NULL, ...) {

@@ -2,16 +2,30 @@ Package: drvid
 Type: Package
 Title: Access to 'DVID' API
 Version: 0.2.0
-Authors@R: person("Gregory","Jefferis", email="jefferis@gmail.com", 
-    role = c("aut", "cre"), comment = c(ORCID = "0000-0002-0587-9355"))
+Authors@R: c(
+    person("Alexander", "Bates", email = "alexander.shakeel.bates@gmail.com", role = c("aut"), 
+    comment = c(ORCID = "0000-0002-1195-0445")),
+    person("Gregory", "Jefferis", email = "jefferis@gmail.com", role = c("aut","cre"), comment = c(ORCID = "0000-0002-0587-9355"))
+    )
 Description: API access to the 'DVID' (Distributed, Versioned, Image-oriented 
     Dataservice).
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Depends: R (>= 2.10)
 Imports:
+    rgl,
     nat,
-    curl
+    curl,
+    alphashape3d,
+    nabor,
+    httr,
+    jsonlite,
+    pbapply
+Suggests: 
+    neuprintr
+Remotes: 
+    jefferislab/neuprintr
 RoxygenNote: 6.1.1
 URL: https://github.com/jefferis/drvid
 BugReports: https://github.com/jefferis/drvid/issues
