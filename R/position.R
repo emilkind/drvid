@@ -1,7 +1,10 @@
-#' Get the bodyid for a volumetric segmentation that covers a given point/points in space
+#' Get the bodyid for a volumetric segmentation that covers a given point/points
+#' in space
 #'
-#' @description  Get the bodyid for a volumetric segmentation that covers a given point/points in space
-#' @param xyz a vector specifying X,Y,Z coorindates, or a n x 3 matrix of multiple 3D points
+#' @description  Get the bodyid for a volumetric segmentation that covers a
+#'   given point/points in space
+#' @param xyz a vector specifying X,Y,Z coordinates, or a n x 3 matrix of
+#'   multiple 3D points
 #' @inheritParams dv_get_user_bookmarks
 #' @return a vector of bodyids corresponding with the given points
 #'

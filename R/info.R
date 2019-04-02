@@ -1,7 +1,9 @@
 #' Retrieve user bookmarks for a neuTu user from a DVID server
 #'
-#' @description Retrieve a user's bookmarks specifying an XYZ position and anotations, for a given  neuTu user on a DVID server
-#' @param user a user is, typically surname folowed by the first letter of their first name, sometimes followed by a number
+#' @description Retrieve a user's bookmarks specifying an XYZ position and
+#'   annotations, for a given  neuTu user on a DVID server
+#' @param user a user is, typically surname followed by the first letter of
+#'   their first name, sometimes followed by a number
 #' @param conn optional DVID connection object (see \code{\link{dv_conn}})
 #' @param ... Additional arguments passed to dv_fetch
 #'

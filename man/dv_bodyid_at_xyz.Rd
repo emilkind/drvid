@@ -2,12 +2,14 @@
 % Please edit documentation in R/position.R
 \name{dv_bodyid_at_xyz}
 \alias{dv_bodyid_at_xyz}
-\title{Get the bodyid for a volumetric segmentation that covers a given point/points in space}
+\title{Get the bodyid for a volumetric segmentation that covers a given point/points
+in space}
 \usage{
 dv_bodyid_at_xyz(xyz, conn = NULL, ...)
 }
 \arguments{
-\item{xyz}{a vector specifying X,Y,Z coorindates, or a n x 3 matrix of multiple 3D points}
+\item{xyz}{a vector specifying X,Y,Z coordinates, or a n x 3 matrix of
+multiple 3D points}
 
 \item{conn}{optional DVID connection object (see \code{\link{dv_conn}})}
 
@@ -17,5 +19,6 @@ dv_bodyid_at_xyz(xyz, conn = NULL, ...)
 a vector of bodyids corresponding with the given points
 }
 \description{
-Get the bodyid for a volumetric segmentation that covers a given point/points in space
+Get the bodyid for a volumetric segmentation that covers a
+  given point/points in space
 }

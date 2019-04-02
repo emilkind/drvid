@@ -7,12 +7,14 @@
 dv_get_user_bookmarks(user, conn = NULL, ...)
 }
 \arguments{
-\item{user}{a user is, typically surname folowed by the first letter of their first name, sometimes followed by a number}
+\item{user}{a user is, typically surname followed by the first letter of
+their first name, sometimes followed by a number}
 
 \item{conn}{optional DVID connection object (see \code{\link{dv_conn}})}
 
 \item{...}{Additional arguments passed to dv_fetch}
 }
 \description{
-Retrieve a user's bookmarks specifying an XYZ position and anotations, for a given  neuTu user on a DVID server
+Retrieve a user's bookmarks specifying an XYZ position and
+  annotations, for a given  neuTu user on a DVID server
 }
