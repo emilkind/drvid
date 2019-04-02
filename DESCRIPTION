@@ -1,7 +1,7 @@
 Package: drvid
 Type: Package
 Title: Access to 'DVID' API
-Version: 0.2.0
+Version: 0.3.0
 Authors@R: c(
     person("Alexander", "Bates", email = "alexander.shakeel.bates@gmail.com", role = c("aut"), 
     comment = c(ORCID = "0000-0002-1195-0445")),
