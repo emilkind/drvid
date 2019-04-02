@@ -7,6 +7,8 @@
 dv_get_annotations(bodyids, conn = NULL, ...)
 }
 \arguments{
+\item{bodyids}{a vector of body IDs for neurons and/or segmentations hosted on a DVID server}
+
 \item{conn}{optional DVID connection object (see \code{\link{dv_conn}})}
 
 \item{...}{Additional arguments passed to dv_fetch}

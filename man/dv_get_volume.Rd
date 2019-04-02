@@ -30,5 +30,5 @@ a mesh3
 }
 \description{
 Get a mesh or voxel data for a given bodyid, from a DVID server.
-Meshes are made via alphashapes, using the function \code{\link{alphashape3d::ashape3d}}, which will work poorly is scale is too low, and slowly is scale is too high.
+Meshes are made via alphashapes, using the function \code{alphashape3d::ashape3d}, which will work poorly is scale is too low, and slowly is scale is too high.
 }

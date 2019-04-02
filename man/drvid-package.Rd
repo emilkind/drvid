@@ -41,8 +41,8 @@ API access to the 'DVID' (Distributed, Versioned, Image-oriented
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/jefferis/drvid}
-  \item Report bugs at \url{https://github.com/jefferis/drvid/issues}
+  \item \url{https://github.com/jefferislab/drvid}
+  \item Report bugs at \url{https://github.com/jefferislab/drvid/issues}
 }
 
 }

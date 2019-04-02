@@ -36,7 +36,7 @@ dv_get_voxels <- function(bodyid, scale = 4, conn = NULL, ...){
 #' Get a mesh or voxel data for a given bodyid
 #'
 #' @description  Get a mesh or voxel data for a given bodyid, from a DVID server.
-#' Meshes are made via alphashapes, using the function \code{\link{alphashape3d::ashape3d}}, which will work poorly is scale is too low, and slowly is scale is too high.
+#' Meshes are made via alphashapes, using the function \code{alphashape3d::ashape3d}, which will work poorly is scale is too low, and slowly is scale is too high.
 #' @param bodyid a body ID for a neuron or segmentation hosted on a DVID server
 #' @param scale Resolution of sparse volume starting with 0 where each level
 #' beyond 0 has 1/2 resolution of previous level. "coarse" will
