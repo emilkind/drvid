@@ -1,12 +1,13 @@
 #' @export
 #' @rdname dv_get_volume
-dv_get_voxels <- function(bodyid, scale = 4, conn = NULL, ...){
+dv_get_voxels <- function(bodyid, scale = 4, df = FALSE, conn = NULL, ...){
   conn <- dv_conn(conn=conn)
   info = dv_get_segmentation_info(conn=conn)
   res = info$Extended$MaxDownresLevel
   if(scale=="coarse"){
     voxelsize = do.call(cbind,info$Extended$BlockSize)
     scale = voxelsize[[1]]
+
     url=sprintf('/api/node/%s/segmentation/sparsevol-coarse/%s', conn$node, bodyid)
   }else if (scale%in%0:res){
     voxelsize = do.call(cbind,info$Extended$VoxelSize)*(2^scale)
@@ -34,9 +35,11 @@ dv_get_voxels <- function(bodyid, scale = 4, conn = NULL, ...){
   colnames(coords) = c("X","Y","Z")
   # voxels = coords * matrix(voxelsize, nrow = nrow(coords), ncol = 3, byrow = TRUE)
   voxels = coords * (2^scale)
-  df = dv_get_annotations(bodyids = bodyid, conn = conn, ...)
-  df$voxelsize = voxelsize[[1]]
-  attr(voxels,"df") = dv_get_annotations(bodyids = bodyid, conn = conn, ...)
+  if(df){
+    df = dv_get_annotations(bodyids = bodyid, conn = conn, ...)
+    df$voxelsize = voxelsize[[1]]
+    attr(voxels,"df") = df
+  }
   voxels
 }
 
@@ -50,6 +53,7 @@ dv_get_voxels <- function(bodyid, scale = 4, conn = NULL, ...){
 #' return the volume in block coordinates.
 #' @param use.surface.voxels if TRUE, surface voxels as estimated as points that do not have at least k other points within 2*voxelsize of them
 #' @param k see use.surface.voxels
+#' @param df if TRUE, a data frame with meta data for the neuron is also retrieved, collected by \code{dv_get_annotations}, as well as the voxel size used
 #' @param conn optional DVID connection object (see \code{\link{dv_conn}})
 #' @param ... Additional arguments passed to dv_fetch
 #' @return a mesh3

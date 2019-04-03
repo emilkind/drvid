@@ -5,7 +5,7 @@
 \alias{dv_get_mesh}
 \title{Get a mesh or voxel data for a given bodyid}
 \usage{
-dv_get_voxels(bodyid, scale = 4, conn = NULL, ...)
+dv_get_voxels(bodyid, scale = 4, df = FALSE, conn = NULL, ...)
 
 dv_get_mesh(bodyid, scale = 4, conn = NULL,
   use.surface.voxels = TRUE, k = 10, ...)
@@ -16,6 +16,8 @@ dv_get_mesh(bodyid, scale = 4, conn = NULL,
 \item{scale}{Resolution of sparse volume starting with 0 where each level
 beyond 0 has 1/2 resolution of previous level. "coarse" will
 return the volume in block coordinates.}
+
+\item{df}{if TRUE, a data frame with meta data for the neuron is also retrieved, collected by \code{dv_get_annotations}, as well as the voxel size used}
 
 \item{conn}{optional DVID connection object (see \code{\link{dv_conn}})}
 
