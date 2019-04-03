@@ -6,6 +6,7 @@ dv_get_voxels <- function(bodyid, scale = 4, conn = NULL, ...){
   res = info$Extended$MaxDownresLevel
   if(scale=="coarse"){
     voxelsize = do.call(cbind,info$Extended$BlockSize)
+    scale = voxelsize[[1]]
     url=sprintf('/api/node/%s/segmentation/sparsevol-coarse/%s', conn$node, bodyid)
   }else if (scale%in%0:res){
     voxelsize = do.call(cbind,info$Extended$VoxelSize)*(2^scale)
@@ -18,17 +19,23 @@ dv_get_voxels <- function(bodyid, scale = 4, conn = NULL, ...){
   header = c(readBin(b[1:4], what = integer(), n=4, size = 1, signed = TRUE, endian = "little"),
              readBin(b[5:12], what = integer(), n=2, size = 4, endian = "little"))
   names(header) = c('start_byte', 'n_dims', 'run_dims', 'reserved', 'n_blocks', 'n_spans')
-  coords = data.frame()
-  for(i in 0:header['n_spans']){
+  coords = list()
+  for(i in header['start_byte']:header['n_spans']){
     offset = 12 + (i * 16) + 1
     pos = readBin(b[offset:(offset+15)], what = integer(), n = 4, size = 4, endian = "little")
-    m = matrix(pos[1:3], nrow = pos[4], ncol = 3, byrow = TRUE)
-    m[,1] = m[,1] + 0:(pos[4]-1)
-    coords = rbind(coords,m)
+    if(pos[4]>0){
+      m = matrix(pos[1:3], nrow = pos[4], ncol = 3, byrow = TRUE)
+      m[,1] = m[,1] + 0:(pos[4]-1)
+      coords[[i+1]] = m
+    }
   }
+  coords = do.call(rbind,coords)
   coords = unique(coords)
   colnames(coords) = c("X","Y","Z")
-  voxels = coords * voxelsize
+  # voxels = coords * matrix(voxelsize, nrow = nrow(coords), ncol = 3, byrow = TRUE)
+  voxels = coords * (2^scale)
+  df = dv_get_annotations(bodyids = bodyid, conn = conn, ...)
+  df$voxelsize = voxelsize[[1]]
   attr(voxels,"df") = dv_get_annotations(bodyids = bodyid, conn = conn, ...)
   voxels
 }
@@ -48,7 +55,7 @@ dv_get_voxels <- function(bodyid, scale = 4, conn = NULL, ...){
 #' @return a mesh3
 #' @export
 #' @rdname dv_get_volume
-dv_get_mesh <- function(bodyid, scale = 0, conn = NULL, use.surface.voxels = TRUE, k = 10, ...){
+dv_get_mesh <- function(bodyid, scale = 4, conn = NULL, use.surface.voxels = TRUE, k = 10, ...){
   voxels = dv_get_voxels(bodyid = bodyid, scale = scale, conn = conn, ...)
   info = dv_get_segmentation_info(conn=conn)
   res = info$Extended$MaxDownresLevel

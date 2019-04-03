@@ -7,7 +7,7 @@
 \usage{
 dv_get_voxels(bodyid, scale = 4, conn = NULL, ...)
 
-dv_get_mesh(bodyid, scale = 0, conn = NULL,
+dv_get_mesh(bodyid, scale = 4, conn = NULL,
   use.surface.voxels = TRUE, k = 10, ...)
 }
 \arguments{
