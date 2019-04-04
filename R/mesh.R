@@ -15,7 +15,11 @@ dv_get_voxels <- function(bodyid, scale = 4, df = FALSE, conn = NULL, ...){
   }else{
     stop("Scale must be 'coarse', or a number between 0 and ", res)
   }
-  dvf = dv_fetch(path = url, conn = conn, parse.json = FALSE, ...)
+  dvf = tryCatch(dv_fetch(path = url, conn = conn, parse.json = FALSE, ...),
+                 error = function(e) NULL)
+  if(is.null(dvf)){
+    return(NULL)
+  }
   b = dvf$content
   header = c(readBin(b[1:4], what = integer(), n=4, size = 1, signed = TRUE, endian = "little"),
              readBin(b[5:12], what = integer(), n=2, size = 4, endian = "little"))
