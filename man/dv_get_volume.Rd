@@ -14,16 +14,19 @@ dv_get_mesh(bodyid, scale = 4, conn = NULL,
 \item{bodyid}{a body ID for a neuron or segmentation hosted on a DVID server}
 
 \item{scale}{Resolution of sparse volume starting with 0 where each level
-beyond 0 has 1/2 resolution of previous level. "coarse" will
-return the volume in block coordinates.}
+beyond 0 has 1/2 resolution of previous level. "coarse" will return the
+volume in block coordinates.}
 
-\item{df}{if TRUE, a data frame with meta data for the neuron is also retrieved, collected by \code{dv_get_annotations}, as well as the voxel size used}
+\item{df}{if TRUE, a data frame with meta data for the neuron is also
+retrieved, collected by \code{dv_get_annotations}, as well as the voxel
+size used}
 
 \item{conn}{optional DVID connection object (see \code{\link{dv_conn}})}
 
 \item{...}{Additional arguments passed to dv_fetch}
 
-\item{use.surface.voxels}{if TRUE, surface voxels as estimated as points that do not have at least k other points within 2*voxelsize of them}
+\item{use.surface.voxels}{if TRUE, surface voxels as estimated as points that
+do not have at least k other points within 2*voxelsize of them}
 
 \item{k}{see use.surface.voxels}
 }
@@ -31,6 +34,8 @@ return the volume in block coordinates.}
 a mesh3
 }
 \description{
-Get a mesh or voxel data for a given bodyid, from a DVID server.
-Meshes are made via alphashapes, using the function \code{alphashape3d::ashape3d}, which will work poorly is scale is too low, and slowly is scale is too high.
+Get a mesh or voxel data for a given bodyid, from a DVID
+  server. Meshes are made via alphashapes, using the function
+  \code{alphashape3d::ashape3d}, which will work poorly if scale is too low,
+  and slowly if scale is too high.
 }

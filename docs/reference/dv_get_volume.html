@@ -32,8 +32,10 @@
 
 <meta property="og:title" content="Get a mesh or voxel data for a given bodyid — dv_get_voxels" />
 
-<meta property="og:description" content="Get a mesh or voxel data for a given bodyid, from a DVID server.
-Meshes are made via alphashapes, using the function alphashape3d::ashape3d, which will work poorly is scale is too low, and slowly is scale is too high." />
+<meta property="og:description" content="Get a mesh or voxel data for a given bodyid, from a DVID
+  server. Meshes are made via alphashapes, using the function
+  alphashape3d::ashape3d, which will work poorly if scale is too low,
+  and slowly if scale is too high." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -110,14 +112,16 @@ Meshes are made via alphashapes, using the function alphashape3d::ashape3d, whic
 
     <div class="ref-description">
     
-    <p>Get a mesh or voxel data for a given bodyid, from a DVID server.
-Meshes are made via alphashapes, using the function <code><a href='https://www.rdocumentation.org/packages/alphashape3d/topics/ashape3d'>alphashape3d::ashape3d</a></code>, which will work poorly is scale is too low, and slowly is scale is too high.</p>
+    <p>Get a mesh or voxel data for a given bodyid, from a DVID
+  server. Meshes are made via alphashapes, using the function
+  <code><a href='https://www.rdocumentation.org/packages/alphashape3d/topics/ashape3d'>alphashape3d::ashape3d</a></code>, which will work poorly if scale is too low,
+  and slowly if scale is too high.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>dv_get_voxels</span>(<span class='no'>bodyid</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>conn</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>dv_get_voxels</span>(<span class='no'>bodyid</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>df</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>conn</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)
 
-<span class='fu'>dv_get_mesh</span>(<span class='no'>bodyid</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>conn</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+<span class='fu'>dv_get_mesh</span>(<span class='no'>bodyid</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>conn</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>use.surface.voxels</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -130,8 +134,14 @@ Meshes are made via alphashapes, using the function <code><a href='https://www.r
     <tr>
       <th>scale</th>
       <td><p>Resolution of sparse volume starting with 0 where each level
-beyond 0 has 1/2 resolution of previous level. "coarse" will
-return the volume in block coordinates.</p></td>
+beyond 0 has 1/2 resolution of previous level. "coarse" will return the
+volume in block coordinates.</p></td>
+    </tr>
+    <tr>
+      <th>df</th>
+      <td><p>if TRUE, a data frame with meta data for the neuron is also
+retrieved, collected by <code>dv_get_annotations</code>, as well as the voxel
+size used</p></td>
     </tr>
     <tr>
       <th>conn</th>
@@ -143,7 +153,8 @@ return the volume in block coordinates.</p></td>
     </tr>
     <tr>
       <th>use.surface.voxels</th>
-      <td><p>if TRUE, surface voxels as estimated as points that do not have at least k other points within 2*voxelsize of them</p></td>
+      <td><p>if TRUE, surface voxels as estimated as points that
+do not have at least k other points within 2*voxelsize of them</p></td>
     </tr>
     <tr>
       <th>k</th>
