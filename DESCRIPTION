@@ -24,10 +24,7 @@ Imports:
     pbapply
 Suggests:
     spelling, 
-    neuprintr
-Remotes: 
-    jefferislab/neuprintr
 RoxygenNote: 6.1.1
-URL: https://github.com/jefferis/drvid
+URL: https://github.com/natv/drvid
 BugReports: https://github.com/jefferis/drvid/issues
 Language: en-GB
