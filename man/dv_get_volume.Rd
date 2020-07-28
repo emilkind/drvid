@@ -7,8 +7,14 @@
 \usage{
 dv_get_voxels(bodyid, scale = 4, df = FALSE, conn = NULL, ...)
 
-dv_get_mesh(bodyid, scale = 4, conn = NULL,
-  use.surface.voxels = TRUE, k = 10, ...)
+dv_get_mesh(
+  bodyid,
+  scale = 4,
+  conn = NULL,
+  use.surface.voxels = TRUE,
+  k = 10,
+  ...
+)
 }
 \arguments{
 \item{bodyid}{a body ID for a neuron or segmentation hosted on a DVID server}

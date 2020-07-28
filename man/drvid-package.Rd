@@ -42,17 +42,17 @@ API access to the 'DVID' (Distributed, Versioned, Image-oriented
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/jefferis/drvid}
+  \item \url{https://github.com/natv/drvid}
   \item Report bugs at \url{https://github.com/jefferis/drvid/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Gregory Jefferis \email{jefferis@gmail.com} (0000-0002-0587-9355)
+\strong{Maintainer}: Gregory Jefferis \email{jefferis@gmail.com} (\href{https://orcid.org/0000-0002-0587-9355}{ORCID})
 
 Authors:
 \itemize{
-  \item Alexander Bates \email{alexander.shakeel.bates@gmail.com} (0000-0002-1195-0445)
+  \item Alexander Bates \email{alexander.shakeel.bates@gmail.com} (\href{https://orcid.org/0000-0002-1195-0445}{ORCID})
 }
 
 }

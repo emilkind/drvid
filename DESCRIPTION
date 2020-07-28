@@ -24,7 +24,7 @@ Imports:
     pbapply
 Suggests:
     spelling, 
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 URL: https://github.com/natv/drvid
 BugReports: https://github.com/jefferis/drvid/issues
 Language: en-GB

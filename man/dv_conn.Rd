@@ -4,8 +4,12 @@
 \alias{dv_conn}
 \title{Make a connection to DVID server}
 \usage{
-dv_conn(server = Sys.getenv("drvid.server"),
-  node = Sys.getenv("drvid.node"), conn = NULL, ...)
+dv_conn(
+  server = Sys.getenv("drvid.server"),
+  node = Sys.getenv("drvid.node"),
+  conn = NULL,
+  ...
+)
 }
 \arguments{
 \item{server}{DVID server (with optional port specification)}
