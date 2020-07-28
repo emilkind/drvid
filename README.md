@@ -1,4 +1,4 @@
-[![Travis build status](https://travis-ci.org/jefferis/drvid.svg?branch=master)](https://travis-ci.org/jefferis/drvid)
+[![Travis build status](https://travis-ci.org/natverse/drvid.svg?branch=master)](https://travis-ci.org/natverse/drvid)
 
 # drvid
 
@@ -9,7 +9,7 @@ Provides access from R to [DVID](https://github.com/janelia-flyem/dvid) as used 
 You can install the development version of drvid from GitHub
 
 ``` r
-devtools::install_github("jefferis/drvid")
+devtools::install_github("natverse/drvid")
 ```
 ## Setup
 
