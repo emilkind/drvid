@@ -25,3 +25,32 @@ dv_bodyid_at_xyz <- function(xyz, conn = NULL, ...){
     apply(xyz, 1, get_bodyid, conn=conn, ...)
   }
 }
+
+# unable to get httr to encode the data in GET body
+# I think it really ought to be possible use the curl package to do this
+dv_bodyids_at_xyz <- function(xyz, conn = NULL, viafile=NA, ...){
+  xyzmat=nat::xyzmatrix(xyz)
+  if(is.na(viafile))
+    viafile=nrow(xyzmat)>4000
+
+  if(viafile) {
+    tf <- tempfile()
+    on.exit(unlink(tf))
+  }
+  bodyj <- jsonlite::toJSON(xyzmat)
+  path=sprintf('api/node/%s/segmentation/labels', conn$node)
+  url=file.path(conn$server, path, fsep="/")
+  # res=dv_fetch(path=url, body = bodyj, conn=conn, simplifyVector = T,...)
+  if(viafile) {
+    writeLines(bodyj, con=tf)
+    cmd=sprintf('curl -X GET --data-binary "@%s" %s', tf, url)
+  } else {
+    cmd=sprintf('curl -X GET --data "%s" %s', bodyj, url)
+  }
+  res=system(cmd, intern=T)
+  res2=jsonlite::fromJSON(res, simplifyVector = T)
+  res2
+}
+
+
+
