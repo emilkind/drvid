@@ -68,7 +68,7 @@ dv_get_annotations <- function(bodyids, conn = NULL, ...){
 #' @rdname dv_get_segmentation_info
 dv_get_segmentation_info <- function(conn = NULL, ...){
   conn <- dv_conn(conn=conn)
-  url=sprintf('/api/node/%s/segmentation/info', conn$node)
+  url=sprintf('/api/node/%s/labels/info', conn$node)
   dvf = dv_fetch(path = url, conn = conn, ...)
   dvf
 }
